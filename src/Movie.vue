@@ -1,0 +1,62 @@
+<template>
+    <div class="hero-body"
+         :style="{ 'background-image': selectedMovie.largeImgSrc }">
+      <header class="nav">
+        <div class="container">
+          <div class="nav-left">
+
+            <a class="nav-item">
+              <span class="tag is-rounded">Films</span>
+            </a>
+            <a class="nav-item">Shows</a>
+            <a class="nav-item">Music</a>
+          </div>
+          <div class="nav-right desktop">
+            <router-link to="/" class="nav-item title is-6">VueFlix</router-link>
+          </div>
+        </div>
+      </header>
+      <div class="container description-container">
+        <div class="columns">
+          <div class="column is-three-quarters">
+            <h1 class="title">{{ selectedMovie.title }}</h1>
+            <h4 class="subtitle">
+              <p class="subtitle-tag">{{ selectedMovie.duration }}</p>
+              <p class="subtitle-tag">{{ selectedMovie.genre }}</p>
+              <p class="subtitle-tag">{{ selectedMovie.releaseDate }}</p>
+            </h4>
+            <p class="description">{{ selectedMovie.description }}</p>
+            <div class="links">
+              <router-link
+                :to="{path: '/' + $route.params.id + '/trailer'}"
+                class="button play-button">
+                Play <i class="fa fa-play"></i>
+              </router-link>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+</template>
+
+<script>
+  import {movies} from './data';
+
+  export default {
+    data() {
+      return {
+        selectedMovie: movies[this.$route.params.id]
+      }
+    },
+    watch: {
+      $route() {
+        this.selectMovie()
+      }
+    },
+    methods: {
+      selectMovie() {
+        this.selectedMovie = movies[this.$route.params.id]
+      }
+    }
+  };
+</script>
