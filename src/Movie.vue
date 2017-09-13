@@ -1,5 +1,5 @@
 <template>
-    <div class="hero-body"
+    <div :class="[{ 'favorite-shadow': selectedMovie.favorite }, 'hero-body']"
          :style="{ 'background-image': selectedMovie.largeImgSrc }">
       <header class="nav">
         <div class="container">
@@ -32,6 +32,15 @@
                 class="button play-button">
                 Play <i class="fa fa-play"></i>
               </router-link>
+
+              <a
+                class="button is-link favorites-button"
+                @click="addToFavorites">
+                <span v-if="selectedMovie.favorite">Remove from</span>
+                <span v-else>Add to</span>
+                &nbsp;favorites
+                <i class="fa fa-plus-square-o"></i>
+              </a>
             </div>
           </div>
         </div>
@@ -56,6 +65,10 @@
     methods: {
       selectMovie() {
         this.selectedMovie = movies[this.$route.params.id]
+      },
+      addToFavorites() {
+        movies[this.$route.params.id].favorite =
+          !movies[this.$route.params.id].favorite
       }
     }
   };

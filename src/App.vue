@@ -9,6 +9,7 @@
             <router-link :to="`/${movieChoice.id}`"
                          tag="li"
                          class="movie-choice">
+              <i :class="[{ 'fa fa-check-circle favorite-check':  movieChoice.favorite }]"></i>
               <img :src="movieChoice.smallImgSrc" class="desktop"/>
               <p class="mobile">{{ movieChoice.subtitle }}</p>
             </router-link>

@@ -263,3 +263,19 @@ html, body {
     display: none;
   }
 }
+
+.favorite-shadow {
+  box-shadow: 0 0 50px 15px rgba(251, 255, 15, 0.25);
+}
+.favorite-check {
+  position: absolute;
+  right: 5px;
+  top: 5px;
+  z-index: 1;
+  color: #fcff4c;
+
+  @media(max-width: $medium) {
+    position: initial;
+    display: block;
+  }
+}
