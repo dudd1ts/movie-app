@@ -1,8 +1,8 @@
 import Vue from 'vue';
 import Router from 'vue-router';
-import Intro from './Intro.vue';
-import Movie from './Movie.vue';
-import MovieTrailer from './MovieTrailer.vue';
+import Intro from './components/Intro.vue';
+import Movie from './components/Movie.vue';
+import MovieTrailer from './components/MovieTrailer.vue';
 
 Vue.use(Router);
 

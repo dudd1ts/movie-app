@@ -2,7 +2,7 @@ $small: 589px;
 $medium: 767px;
 $large: 1023px;
 
-@import "../node_modules/bulma/bulma";
+@import "../../node_modules/bulma/bulma";
 
 html {
   background: linear-gradient(to bottom right,#7f3737,#2a2122);

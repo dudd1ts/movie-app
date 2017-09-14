@@ -17,7 +17,7 @@
 </template>
 
 <script>
-  import {movies} from './data';
+  import {movies} from '../data';
 
   export default {
     data () {
